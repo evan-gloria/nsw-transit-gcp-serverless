@@ -14,7 +14,7 @@ This project implements a **Medallion Architecture** (Bronze ➔ Silver ➔ Gold
 * **Zero Trust Credentials:** API keys are not hardcoded. They are securely injected at runtime via **Google Cloud Secret Manager**, utilizing strict IAM Least-Privilege policies (`SecretAccessor` role restricted strictly to the execution service account).
 
 ## 📁 Repository Structure
-
+```text
 nsw-transit-gcp-serverless/
 ├── README.md
 ├── sql/
@@ -26,6 +26,7 @@ nsw-transit-gcp-serverless/
 │   └── trigger-nws-ingest/                  # 5-minute streaming ingestion for live telemetry
 │       ├── main.py
 │       └── requirements.txt
+```
 
 ## 📊 The Dashboard
 The BigQuery Gold layer feeds directly into a two-page Looker Studio report:
