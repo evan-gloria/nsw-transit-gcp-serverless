@@ -17,13 +17,24 @@ This project implements a **Medallion Architecture** (Bronze ➔ Silver ➔ Gold
 ```text
 nsw-transit-gcp-serverless/
 ├── README.md
+├── assets/
+│   ├── images/
+│   │   ├── nsw_trains_performance_analytics.png
+│   │   ├── nsw_trains_real_time_map.png
 ├── sql/
-│   └── gold_layer_views.sql             # BigQuery data warehouse transformations
+│   ├── gold/ 
+│   │   ├── ddl_create_vw_live_train_positions.sql
+│   │   └── ddl_create_vw_train_performance_metrics.sql
+│   ├── silver/ 
+│   │   ├── ddl_create_flattened_tables_and_views.sql
+│   │   └── dml_refresh_silver_trips_flattened.sql
+│   ├── bronze/
+│   │   └── ddl_create_external_tables.sql
 ├── functions/
-│   ├── trigger-ingest-nsw-static-metadata/  # Weekly batch ingestion for schedules
+│   ├── ingest-nsw-static-metadata/  # Weekly batch ingestion for schedules
 │   │   ├── main.py
 │   │   └── requirements.txt
-│   └── trigger-nws-ingest/                  # 5-minute streaming ingestion for live telemetry
+│   └── ingest-nws-trips/            # 5-minute streaming ingestion for live telemetry
 │       ├── main.py
 │       └── requirements.txt
 ```
