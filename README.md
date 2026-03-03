@@ -56,3 +56,8 @@ While the V1 architecture utilizes BigQuery SQL views over raw GCS files for rap
 - PySpark Processing: Transitioning from SQL-based Silver layer transformations to local/cloud PySpark to handle complex, stateful aggregations of historical telemetry.
 - Apache Iceberg: Converting the storage layer to the Apache Iceberg open table format. This will solve the streaming "small file problem" and provide massive query cost-optimizations when accessed via BigQuery BigLake.
 - GitOps CI/CD: Integrating GitHub with Cloud Build to automatically trigger Cloud Run deployments upon pushing new commits to the main branch.
+
+## ⚖️ Data Source & Attribution
+The raw transit telemetry used in this project is sourced from the [Transport for NSW Open Data Hub](https://opendata.transport.nsw.gov.au/). 
+
+*Disclaimer: This project is strictly for educational and portfolio demonstration purposes. It is not affiliated with, maintained by, or endorsed by Transport for NSW.*
